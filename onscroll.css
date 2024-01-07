@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #1f242d;
+  text-align: center;
+  overflow: hidden;
+}
+section .animate {
+  filter: blur(6px);
+  transition: 1s;
+  opacity: 0;
+}
+section.show-animate .animate {
+  filter: blur(0);
+  opacity: 1;
+}
+h1 {
+  font-size: 70px;
+  color: #fff;
+}
+p {
+  font-size: 30px;
+  color: #0ef;
+  font-weight: 600;
+}
+
+.sec-1 .animate {
+  transform: translateX(-100%);
+}
+.sec-1.show-animate .animate {
+  transform: translateX(0);
+}
+.sec-2 .animate {
+  transform: translateX(100%);
+}
+.sec-2.show-animate .animate {
+  transform: translateX(0);
+}
+.sec-3 .animate {
+  transform: scale(0.7);
+}
+.sec-3.show-animate .animate {
+  transform: scale(1);
+}
+.sec-2 p {
+  color: #0f0;
+}
+.sec-3 p {
+  color: #0ef;
+}
+.sec-4 p {
+  color: #e0f;
+}
+.sec-5 .images img {
+  max-width: 400px;
+  height: 185px;
+  margin: 0 20px;
+  object-fit: contain;
+  transform: translateX(-100%);
+}
+.sec-5.show-animate .images img {
+  transform: translateX(0);
+  transition-delay: calc(0.2s * var(--i));
+}
+.sec-4 .showRight {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: green;
+  transition: 1s;
+  transition-delay: calc(0.2s * var(--i));
+}
+.sec-4.show-animate .showRight {
+  width: 0;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .sec-5 .images img {
+    margin: 20px 0;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  p {
+    font-size: 16px;
+  }
+}
